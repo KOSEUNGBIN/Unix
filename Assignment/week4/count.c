@@ -17,7 +17,7 @@ int main()
     int index , ascii;
     ssize_t nread;
 
-    if((filedes = open("inputCount" , O_RDONLY)) == -1)
+    if((filedes = open("inputfile" , O_RDONLY)) == -1)
     {
         printf("error in inputCount\n");
         exit(1);
