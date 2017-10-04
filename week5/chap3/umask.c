@@ -11,21 +11,20 @@ int specialcreate (const char *pathname , mode_t mode)
     mode_t oldu;
     int filedes;
 
+    /* umask를 0으로 설정*/
     if((oldu = umask(0)) == -1)
     {
         perror("Error : saving old mask\n");
         return -1;
     }
 
-    printf("%#o\n" , oldu);
-    printf("%d\n" , oldu);
-
-
+    /* 파일 생성 */
     if((filedes = open(pathname , O_WRONLY | O_CREAT | O_EXCL , mode)) == -1)
     {
         perror("Error : opening file\n");
     }
 
+    /* umask 복원 */
     if(umask(oldu) == -1)
     {
         perror("restoring old mask\n");

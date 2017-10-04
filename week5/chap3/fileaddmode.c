@@ -22,6 +22,11 @@ int main(int argc , char ** argv)
         }
 
         statbuf.st_mode |= XPERM;
+
+        /*
+         * chmod 함수를 호출해야만, mode 변경이 이루어짐
+         * st_mode를 바꾼다고 해서 변경되지 않음
+         * */
         if(chmod(argv[k] , statbuf.st_mode) == -1)
         {
             fprintf(stderr , "addx: couldn't change mode for %s\n" , argv[k]);

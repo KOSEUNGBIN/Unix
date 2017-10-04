@@ -11,7 +11,7 @@ static short octarray[9] = {
         0040, 0020, 0010,
         0004, 0002, 0001
 };
-
+/* file permission 에 대한 기호 , 끝부분 NULL을 위해 길이가 10이다 */
 static char perms[10] = "rwxrwxrwx";
 
 int filedata(const char *pathname)
@@ -26,6 +26,10 @@ int filedata(const char *pathname)
         return -1;
     }
 
+    /*
+     * permission을 읽기 가능한 형태로 변경
+     *
+     * */
     for( j = 0 ; j < 9 ; ++j)
     {
         if(statbuf.st_mode & octarray[j])
