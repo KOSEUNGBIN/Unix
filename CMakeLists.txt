@@ -3,5 +3,5 @@ project(Unix)
 
 set(CMAKE_C_STANDARD 11)
 
-set(SOURCE_FILES   Assignment/week5/3-10.c)
+set(SOURCE_FILES   Assignment/week7/basicshell.c)
 add_executable(Unix ${SOURCE_FILES})
