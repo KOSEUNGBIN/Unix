@@ -3,5 +3,5 @@ project(Unix)
 
 set(CMAKE_C_STANDARD 11)
 
-set(SOURCE_FILES week9/chap5/zombie.c)
+set(SOURCE_FILES Assignment/week9/myshell.c)
 add_executable(Unix ${SOURCE_FILES})
